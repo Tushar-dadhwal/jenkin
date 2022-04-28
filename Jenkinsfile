@@ -1,21 +1,17 @@
-pipeline {
-    agent any 
-    stages {
-        stage('Build') { 
-            steps {
-                echo 'build done'
-                System.out.println("Whatever")
+pipeline { 
+    agent any  
+    stages { 
+        stage('sample1') {
+          steps {
+            echo 'summition'
+          }
+        }
+        stage('sample 2') { 
+            steps { 
+               echo 'addition...' 
+               sh 'python main.py'
+               //bat 'mvn package'
             }
         }
-        stage('Test') { 
-            steps {
-                echo 'test done'
-            }
-        }
-        stage('Deploy') { 
-            steps {
-                echo 'deploy done'
-            }
-        }
-    }
+   }
 }
